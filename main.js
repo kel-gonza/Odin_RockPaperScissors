@@ -52,14 +52,14 @@ function singleRound(playerSelection, computerSelection){
 
 }
 
-function game(){
+function game(singleRound, rounds){
     // call singleRound() function inside to keep playing the game
     // this will play a 5 round game 
     // this will keep score and reports a winner or loser at the end
     // use a loop to play five rounds
-
-    for (let i = 0; i < 5; i++){
-        return singleRound(playerSelection, computerSelection);
+    let rounds = prompt('How many round do you want?: ')
+    for (let i = 0 ; i < round; i++){
+        console.log(i)
     }
 
 }

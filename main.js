@@ -3,7 +3,7 @@
     // get computer choice
     // single round of the game (which shows the computer vs the human)
     // a loop for playing 5 rounds and keeping score to figure out who won in the end
-const choice = prompt('Choose one (Rock, Paper, or Scissors): ').toLocaleLowerCase();
+const choice = prompt('Choose one (Rock, Paper, or Scissors): ').toLowerCase();
 
 function playerSelection(){
     
@@ -54,23 +54,6 @@ function singleRound(){
     const player = choice;
     const computer = getComputerChoice();
 
-    if((player == 'rock' && computer == 'rock') || (player == 'paper' && computer == 'paper') || (player == 'scissors' && computer == 'scissors')){
-        return 'Tie Game';
-    } else if(player == 'rock' && computer == 'paper'){
-        return 'Computer has won: Paper beats Rock';
-    }else if(player == 'scissors' && computer == 'rock'){
-        return 'Computer has won: Rock beats Scissors';
-    }else if(player == 'paper' && computer == 'scissors'){
-        return 'Computer has won: Scissors beat Paper'
-    }else if (player == 'paper' && computer == 'rock'){
-        return 'Player has won: Paper beats rock';
-    }else if (player == 'rock' && computer == 'scissors'){
-        return 'Player has won: Rock beats Scissors';
-    }else if (player == 'scissors' && computer == 'paper'){
-        return 'Player has won: Sissors beat Paper'
-    }else{
-        return 'What did I do wrong?';
-    }
 
 }
 
@@ -88,7 +71,7 @@ function singleRound(){
 
 
 console.log(playerSelection());
-console.log(`Computer Chose: ${getComputerChoice()}!`)
+console.log(`Computer chose: ${getComputerChoice()}!`)
 console.log(singleRound());
 
 

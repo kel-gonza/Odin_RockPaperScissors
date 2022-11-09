@@ -33,17 +33,36 @@ function getComputerChoice(){
 // this function will create a 'single' round of Rock Paper Scissors
 function singleRound(playerSelection, computerSelection){
     // this will return a string that delcares the winner of the round.
-    // make playerSelection casesensitive
-    
+    // make playerSelection casesensitive -[x]
+    // rock eats scissors
+    // scissors eats paper
+    // paper eats rock
+
+    if((playerSelection == 'rock' && computerSelection == 'rock') || (playerSelection == 'paper' && computerSelection == 'paper') || (playerSelection == 'scissors' && computerSelection == 'scissors')){
+        return 'Tie Game';
+    } else if(playerSelection == 'rock' && computerSelection == 'paper'){
+        return 'Computer has won';
+    }else if(playerSelection == 'scissors' && computerSelection == 'rock'){
+        return 'Computer has won';
+    }else if(playerSelection == 'paper' && computerSelection == 'scissors'){
+        return 'Computer has won'
+    }else{
+        return 'Player has won';
+    }
 
 }
 
-// function game(){
-//     // call singleRound() function inside to keep playing the game
-//     // this will play a 5 round game 
-//     // this will keep score and reports a winner or loser at the end
-//     // use a loop to play five rounds
-// }
+function game(){
+    // call singleRound() function inside to keep playing the game
+    // this will play a 5 round game 
+    // this will keep score and reports a winner or loser at the end
+    // use a loop to play five rounds
+
+    for (let i = 0; i < 5; i++){
+        return singleRound(playerSelection, computerSelection);
+    }
+
+}
 
 const playerSelection = prompt('Choose one (Rock, Paper, or Scissors): ').toLowerCase(); // you can use a prompt() to get an input from the user
 const computerSelection = getComputerChoice();

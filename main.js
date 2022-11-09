@@ -3,6 +3,20 @@
     // get computer choice
     // single round of the game (which shows the computer vs the human)
     // a loop for playing 5 rounds and keeping score to figure out who won in the end
+const choice = prompt('Choose one (Rock, Paper, or Scissors): ').toLocaleLowerCase();
+
+function playerSelection(){
+    
+    if (choice == 'rock'){
+        return 'Player chose: Rock!'
+    }else if (choice == 'paper'){
+        return 'Player chose: Paper!'
+    }else if (choice == 'scissors'){
+        return 'Player chose: Scissors!'
+    }else{
+        return 'Please Input Rock Paper or Scissos. I am not that smart of a computer.'
+    }
+}
 
 
 function getComputerChoice(){
@@ -24,58 +38,58 @@ function getComputerChoice(){
         case 2:
             return 'scissors';
     }
-
      
 }
 
 
 
 // this function will create a 'single' round of Rock Paper Scissors
-function singleRound(playerSelection, computerSelection){
-    // this will return a string that delcares the winner of the round.
-    // make playerSelection casesensitive -[x]
+function singleRound(){
+    // this will return a string that delcares the winner of the round
+;    // make playerSelection casesensitive -[x]
     // rock eats scissors
     // scissors eats paper
     // paper eats rock
 
-    if((playerSelection == 'rock' && computerSelection == 'rock') || (playerSelection == 'paper' && computerSelection == 'paper') || (playerSelection == 'scissors' && computerSelection == 'scissors')){
+    const player = choice;
+    const computer = getComputerChoice();
+
+    if((player == 'rock' && computer == 'rock') || (player == 'paper' && computer == 'paper') || (player == 'scissors' && computer == 'scissors')){
         return 'Tie Game';
-    } else if(playerSelection == 'rock' && computerSelection == 'paper'){
+    } else if(player == 'rock' && computer == 'paper'){
         return 'Computer has won: Paper beats Rock';
-    }else if(playerSelection == 'scissors' && computerSelection == 'rock'){
+    }else if(player == 'scissors' && computer == 'rock'){
         return 'Computer has won: Rock beats Scissors';
-    }else if(playerSelection == 'paper' && computerSelection == 'scissors'){
+    }else if(player == 'paper' && computer == 'scissors'){
         return 'Computer has won: Scissors beat Paper'
-    }else if (playerSelection == 'paper' && computerSelection == 'rock'){
+    }else if (player == 'paper' && computer == 'rock'){
         return 'Player has won: Paper beats rock';
-    }else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+    }else if (player == 'rock' && computer == 'scissors'){
         return 'Player has won: Rock beats Scissors';
-    }else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+    }else if (player == 'scissors' && computer == 'paper'){
         return 'Player has won: Sissors beat Paper'
     }else{
-        return 'Please input Rock Paper or Scissors. I am not that smart of a computer.';
-        return playerSelection;
+        return 'What did I do wrong?';
     }
 
 }
 
-function game(){
-    // call singleRound() function inside to keep playing the game
-    // this will play a 5 round game 
-    // this will keep score and reports a winner or loser at the end
-    // use a loop to play five rounds
-    console.log(singleRound())
-    let num = prompt('How many round do you want?: ')
-    for (let i = 0 ; i < round; i++){
-        console.log(i)
-    }
+// function game(){
+//     // call singleRound() function inside to keep playing the game
+//     // this will play a 5 round game 
+//     // this will keep score and reports a winner or loser at the end
+//     // use a loop to play five rounds
+    
+//     for (let i = 0 ; i < 5; i++){
+//         console.log(singleRound(playerSelection(), getComputerChoice()))
+//     }
 
-}
+// }
 
-const playerSelection = prompt('Choose one (Rock, Paper, or Scissors): ').toLowerCase(); // you can use a prompt() to get an input from the user
-const computerSelection = getComputerChoice();
 
-console.log(playerSelection);
-console.log(computerSelection);
+console.log(playerSelection());
+console.log(`Computer Chose: ${getComputerChoice()}!`)
+console.log(singleRound());
 
-console.log(singleRound(playerSelection, computerSelection));
+
+// console.log(game());

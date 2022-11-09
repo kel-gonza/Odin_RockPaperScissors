@@ -41,23 +41,31 @@ function singleRound(playerSelection, computerSelection){
     if((playerSelection == 'rock' && computerSelection == 'rock') || (playerSelection == 'paper' && computerSelection == 'paper') || (playerSelection == 'scissors' && computerSelection == 'scissors')){
         return 'Tie Game';
     } else if(playerSelection == 'rock' && computerSelection == 'paper'){
-        return 'Computer has won';
+        return 'Computer has won: Paper beats Rock';
     }else if(playerSelection == 'scissors' && computerSelection == 'rock'){
-        return 'Computer has won';
+        return 'Computer has won: Rock beats Scissors';
     }else if(playerSelection == 'paper' && computerSelection == 'scissors'){
-        return 'Computer has won'
+        return 'Computer has won: Scissors beat Paper'
+    }else if (playerSelection == 'paper' && computerSelection == 'rock'){
+        return 'Player has won: Paper beats rock';
+    }else if (playerSelection == 'rock' && computerSelection == 'scissors'){
+        return 'Player has won: Rock beats Scissors';
+    }else if (playerSelection == 'scissors' && computerSelection == 'paper'){
+        return 'Player has won: Sissors beat Paper'
     }else{
-        return 'Player has won';
+        return 'Please input Rock Paper or Scissors. I am not that smart of a computer.';
+        return playerSelection;
     }
 
 }
 
-function game(singleRound, rounds){
+function game(){
     // call singleRound() function inside to keep playing the game
     // this will play a 5 round game 
     // this will keep score and reports a winner or loser at the end
     // use a loop to play five rounds
-    let rounds = prompt('How many round do you want?: ')
+    console.log(singleRound())
+    let num = prompt('How many round do you want?: ')
     for (let i = 0 ; i < round; i++){
         console.log(i)
     }

@@ -22,28 +22,27 @@
 
 // goodluck kels
 
+
+const choose = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
+
 // ------------ player function ------------------
 
-function playerSelection(){
-    const choose = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
+function playerSelection(prompt){
 
-    let player = choose;
 
     //if player chooses 'rock' will return a string
-    if(player === 'rock'){
+    if(prompt === 'rock'){
         return 'Player has chosen: Rock!';
         // else if player chooses 'paper' it will return a string stating that
-    }else if(player === 'paper'){
+    } else if(prompt === 'paper'){
         return 'Player has chosen: Paper!'
         // else if player has chosen 'scissors' it will return a string
-    }else if(player === 'scissors'){
+    } else if(prompt === 'scissors'){
         return 'Player has chosesn: Scissors!'
         // else; if player has not chosen any of the above statments, it will return an error
-    }else{
+    } else{
         return 'Error; please choose out of the three words.'
     }
-
-    return choose;
 }
 
 // --------------- computer function ------------
@@ -72,7 +71,7 @@ function singleGame(p1, p2){
         if(p2 === 'paper'){
             //player 2 will lose
             return 'Player 1 has won: Scissors beat paper';
-        }else{
+        } else{
             // if player 2 is rock player 1 looses
             // player 2 wins
             return 'Player 2 has won: Rock Beats Scissors';
@@ -86,7 +85,7 @@ function singleGame(p1, p2){
         // player 2 loses
         if(p2 === 'scissors'){
             return 'Player 1 has won: Rock beats Scissors';
-        }else{
+        } else{
             // if player 2 is paper 
             // player 2 wins
             return 'Player 2 has won: Paper beats Scissors';
@@ -99,7 +98,7 @@ function singleGame(p1, p2){
         // player 1 wins
         if(p2 === 'rock'){
             return 'Player 1 has won: Paper beats Rock';
-        }else{
+        } else{
             // if player 2 is scissors
             // player2 wins and p1 loses
             return 'Player 2 has won: Scissors beat paper';
@@ -108,7 +107,11 @@ function singleGame(p1, p2){
 
 }
 
-// console.log(playerSelection());
+//------------------- play game --------------
+
+
+
+console.log(playerSelection(choose));
 console.log(computerSelection());
 
-console.log(singleGame(playerSelection(), computerSelection()));
+console.log(singleGame(playerSelection(choose), computerSelection()));

@@ -40,5 +40,65 @@ function computerSelection(){
     return choice;
 }
 
-console.log(playerSelection());
-console.log(computerSelection())
+// -------------- single game function ------------
+
+function singleGame(player, computer){
+    let player = p1;
+    let computer = p2;
+
+    // if they both have the same options it will be a tie
+    if(p1 === p2){
+        return 'Tie Game!'
+    }
+
+    //player 1 is scissors
+
+    if(p1 === 'scissors'){
+        // if player 2 is paper
+        if(p2 === 'paper'){
+            //player 2 will lose
+            return 'Player 1 has won: Scissors beat paper';
+        }else{
+            // if player 2 is rock player 1 looses
+            // player 2 wins
+            if(p2 === 'rock'){
+                return 'Player 2 has won: Rock Beats Scissors';
+            }
+        }
+    }
+
+    // player 1 is Rock
+
+    if(p1 === 'rock'){
+        // if player 2 is scissors
+        // player 2 loses
+        if(p2 === 'scissors'){
+            return 'Player 1 has won: Rock beats Scissors';
+        }else{
+            // if player 2 is paper 
+            // player 2 wins
+            if(p2 === 'paper'){
+                return 'Player 2 has won: Paper beats Scissors';
+            }
+        }
+    }
+
+    // Player 1 is Paper
+    if(p1 === 'paper'){
+        // if player 2 is rock
+        // player 1 wins
+        if(p2 === 'rock'){
+            return 'Player 1 has won: Paper beats Rock';
+        }else{
+            // if player 2 is scissors
+            // player2 wins and p1 loses
+            return 'Player 2 has won: Scissors beat paper';
+        }
+    }
+
+}
+
+// console.log(playerSelection());
+console.log(computerSelection());
+
+console.log(singleGame(playerSelection(), computerSelection()));

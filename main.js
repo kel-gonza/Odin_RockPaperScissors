@@ -42,9 +42,7 @@ function computerSelection(){
 
 // -------------- single game function ------------
 
-function singleGame(player, computer){
-    let player = p1;
-    let computer = p2;
+function singleGame(p1, p2){
 
     // if they both have the same options it will be a tie
     if(p1 === p2){
@@ -61,9 +59,7 @@ function singleGame(player, computer){
         }else{
             // if player 2 is rock player 1 looses
             // player 2 wins
-            if(p2 === 'rock'){
-                return 'Player 2 has won: Rock Beats Scissors';
-            }
+            return 'Player 2 has won: Rock Beats Scissors';
         }
     }
 
@@ -77,9 +73,7 @@ function singleGame(player, computer){
         }else{
             // if player 2 is paper 
             // player 2 wins
-            if(p2 === 'paper'){
-                return 'Player 2 has won: Paper beats Scissors';
-            }
+            return 'Player 2 has won: Paper beats Scissors';
         }
     }
 

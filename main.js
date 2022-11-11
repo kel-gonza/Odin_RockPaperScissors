@@ -27,6 +27,22 @@
 function playerSelection(){
     const choose = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
 
+    let player = choose;
+
+    //if player chooses 'rock' will return a string
+    if(player === 'rock'){
+        return 'Player has chosen: Rock!';
+        // else if player chooses 'paper' it will return a string stating that
+    }else if(player === 'paper'){
+        return 'Player has chosen: Paper!'
+        // else if player has chosen 'scissors' it will return a string
+    }else if(player === 'scissors'){
+        return 'Player has chosesn: Scissors!'
+        // else; if player has not chosen any of the above statments, it will return an error
+    }else{
+        return 'Error; please choose out of the three words.'
+    }
+
     return choose;
 }
 

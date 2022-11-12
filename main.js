@@ -20,7 +20,7 @@ function playerSelection(prompt){
 
 
 function computerSelection(){
-    let choices = ['scissors', 'rock', 'paper'];
+    const choices = ['scissors', 'rock', 'paper'];
 
     let choice = choices[Math.floor(Math.random() * choices.length)];
 

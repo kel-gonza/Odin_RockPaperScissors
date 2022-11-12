@@ -1,33 +1,5 @@
-// Rock Paper Scissors 
-// Computer generated and player selection 
-
-// will create a set of instructions for the computer to pick out 3 options
-    // rock, paper, or scissors
-    // this will be randomly generated
-
-// Will then create another set of instructions for the player.
-    // I will use a prompt so the user has the freedom to choose
-    // the prompt will not be case sensitive so whatever style they chose it will work
-        // ex. they can put ROCK roCK rock 
-    // however, when they make a mistake the computer will say something
-
-// After, I will create another set of instructions for a single game
-    // this will have rules of the game. 
-    // rock beats scissors
-    // scissors beats paper 
-    // paper beats rock
-    // also a tie option
-
-// Then I will create a loop for five games. This will be added to another funtion
-
-// goodluck kels
-// ---------------- global variables ---------------//
-
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
-
-
-// ------------ player function ------------------
 
 function playerSelection(prompt){
 
@@ -46,7 +18,6 @@ function playerSelection(prompt){
     }
 }
 
-// --------------- computer function ------------
 
 function computerSelection(){
     let choices = ['scissors', 'rock', 'paper'];
@@ -56,7 +27,6 @@ function computerSelection(){
     return choice;
 }
 
-// -------------- single game function ------------
 
 function singleGame(p1, p2){
 
@@ -110,8 +80,6 @@ function singleGame(p1, p2){
     }
 
 }
-
-//------------------- play game -------------- //
 
 function playGame(){
 

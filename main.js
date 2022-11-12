@@ -21,9 +21,11 @@
 // Then I will create a loop for five games. This will be added to another funtion
 
 // goodluck kels
+// ---------------- global variables ---------------//
 
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
 
-// const choose = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
 
 // ------------ player function ------------------
 
@@ -69,10 +71,12 @@ function singleGame(p1, p2){
         // if player 2 is paper
         if (p2 === 'paper') {
             //player 2 will lose
+            userScore++;
             return 'Player 1 has won: Scissors beat paper';
         } else {
             // if player 2 is rock player 1 looses
             // player 2 wins
+            computerScore++;
             return 'Computer has won: Rock Beats Scissors';
         }
     // player 1 is Rock
@@ -80,10 +84,12 @@ function singleGame(p1, p2){
         // if player 2 is scissors
         // player 2 loses
         if(p2 === 'scissors') {
+            userScore++;
             return 'Player 1 has won: Rock beats Scissors';
         } else{
             // if player 2 is paper 
             // player 2 wins
+            computerScore++;
             return 'Computer has won: Paper beats Rock';
         }
     }else {
@@ -92,10 +98,12 @@ function singleGame(p1, p2){
         // if player 2 is rock
         // player 1 wins
             if (p2 === 'rock') {
+                userScore++;
                 return 'Player 1 has won: Paper beats Rock';
             } else {
             // if player 2 is scissors
             // player2 wins and p1 loses
+                computerScore++;
                 return 'Computer has won: Scissors beat paper';
             }
         }
@@ -107,29 +115,22 @@ function singleGame(p1, p2){
 
 function playGame(){
 
-    // let userScore = parseInt(0);
-    // let computerScre = parseInt(0);
-    let win = "You Won!!!!"
-    let lose = "You lost."
-    let tie = 'Tie Game.'
-
 
     // will play a round of 5 games
     for(let i=0; i<5; i++){
         player = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
         console.log(playerSelection(player))
         computer = computerSelection();
+        console.log(`Computer has chosen: ${computer}!`)
         console.log(singleGame(player, computer));
-        // console.log(`Your score = ${userScore}`)
+        console.log(`Your score = ${userScore}`)
+        console.log(`Computer's score = ${computerScore}`)
     }
 
 
 
 }
 
-// console.log(playerSelection(choose));
-// console.log(computerSelection()); // this can be a random print statment that prints out after the game
 
 console.log(playGame())
 
-// console.log(singleGame(playerSelection(choose), computerSelection()));

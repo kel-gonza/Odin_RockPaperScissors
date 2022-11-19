@@ -81,24 +81,15 @@ function singleGame(p1, p2){
 
 }
 
-function playGame(){
+function playGame() {
 
-
-    // will play a round of 5 games
-    for(let i=0; i<5; i++){
-        player = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
-        console.log(playerSelection(player))
-        computer = computerSelection();
-        console.log(`Computer has chosen: ${computer}!`)
-        console.log(singleGame(player, computer));
-        console.log(`Your score = ${userScore}`)
-        console.log(`Computer's score = ${computerScore}`)
-    }
-
-
-
+    player = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
+    console.log(playerSelection(player))
+    computer = computerSelection();
+    console.log(`Computer has chosen: ${computer}!`)
+    console.log(singleGame(player, computer));
+    console.log(`Your score = ${userScore}`)
+    console.log(`Computer's score = ${computerScore}`)
 }
-
-
 console.log(playGame())
 

@@ -81,9 +81,9 @@ function singleGame(p1, p2){
 
 }
 
-function playGame() {
 
-    player = prompt('Please choose out of three (Rock, Paper, or Scissors): ').toLowerCase()
+function playGame() {
+// deleted prompt. instead we will add the clickable buttons choices
     console.log(playerSelection(player))
     computer = computerSelection();
     console.log(`Computer has chosen: ${computer}!`)
@@ -92,4 +92,14 @@ function playGame() {
     console.log(`Computer's score = ${computerScore}`)
 }
 console.log(playGame())
+
+// attach event listener 'click' to a group of buttons
+const buttons = document.querySelectorAll('button');
+
+// going to use the forEach method to iterate through each buttons
+
+buttons.forEach((button) => {
+	button.addEventListener('click', playGame) 
+});
+
 

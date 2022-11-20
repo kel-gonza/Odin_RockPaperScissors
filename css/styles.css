@@ -1,6 +1,7 @@
 /* Box Model Hack */
 * {
 	box-sizing: border-box;
+	text-align: center;
 }
 
 
@@ -11,12 +12,13 @@
 body {
 	background: url('/img/pexels-dan-cristian-pădureț-5102221.jpeg') fixed center;
 }
-
+p{
+	font-size: 20px;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {}
 
 .options{
 	/* border: .4rem solid black; */
@@ -31,9 +33,16 @@ header {}
 	transform: scale(1.1);
 	box-shadow: 0 0 1rem #000000;
 }
+img{
+	max-width: 30px;
+	height:auto;
+}
 
-
-footer {}
+footer {
+	position: absolute;
+	bottom:30px;
+	right:30px;
+}
 
 /******************************************
 /* ADDITIONAL STYLES

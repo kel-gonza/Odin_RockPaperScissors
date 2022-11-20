@@ -4,13 +4,13 @@ let computerScore = 0;
 function playerSelection(player){
     //if player chooses 'rock' will return a string
     if ( player=== 'Rock') {
-        return 'Player has chosen: Rock!';
+        return 'Rock!';
         // else if player chooses 'paper' it will return a string stating that
     } else if( player === 'Paper') {
-        return 'Player has chosen: Paper!'
+        return 'Paper!'
         // else if player has chosen 'scissors' it will return a string
     } else if( player === 'Scissors') {
-        return 'Player has chosen: Scissors!'
+        return 'Scissors!'
         // else; if player has not chosen any of the above statements, it will return an error
     } else {
         return 'Error'
@@ -118,7 +118,7 @@ options.forEach((option) => {
 		const cChoice = document.querySelector('.computerChoice');
 		const player = this.value;
     	
-		pChoice.textContent = playerSelection(player)
+		pChoice.textContent = `Player has chosen: ${playerSelection(player)}`
     	computer = computerSelection();
 		cChoice.textContent = `Computer has chosen: ${computer}!`
 

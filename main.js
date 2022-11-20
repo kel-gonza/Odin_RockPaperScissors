@@ -106,17 +106,17 @@ function checkWinner() {
 }
 
 // attach event listener 'click' to a group of buttons
-const buttons = document.querySelectorAll('button');
+const options = document.querySelectorAll('.options');
 
 // going to use the forEach method to iterate through each buttons
 
-buttons.forEach((button) => {
-	button.addEventListener('click', function playGame() {
-// deleted prompt. instead we will add the clickable buttons choices
+options.forEach((option) => {
+	option.addEventListener('click', function playGame() {
+
 		const sGame = document.querySelector('.singleGame');
 		const pChoice = document.querySelector('.playerChoice');
 		const cChoice = document.querySelector('.computerChoice');
-		const player = this.textContent;
+		const player = this.value;
     	
 		pChoice.textContent = playerSelection(player)
     	computer = computerSelection();

@@ -6,36 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>Rock Paper Scissors Game</h1>
-    <div id="container">
-      <input
-        class="options"
-        type="image"
-        src="/img/icons8-hand-rock-skin-type-1-100.png"
-        value="Rock"
-      />
-      <input
-        class="options"
-        type="image"
-        src="img/icons8-hand-100.png"
-        value="Paper"
-      />
-      <input
-        class="options"
-        type="image"
-        src="img/icons8-hand-scissors-skin-type-3-100.png"
-        value="Scissors"
-      />
+    <header>
+      <h1>Rock Paper Scissors Game</h1>
+    </header>
+    <h2>Welcome! You are playing against a computer</h2>
+    <p>Good Luck.</p>
+
+    <h2 class="singleGame"></h2>
+    <div class="invisibleContainer">
+      <div id="container">
+        <input
+          class="options"
+          type="image"
+          src="/img/icons8-hand-rock-skin-type-1-100.png"
+          value="Rock"
+        />
+        <input
+          class="options"
+          type="image"
+          src="img/icons8-hand-100.png"
+          value="Paper"
+        />
+        <input
+          class="options"
+          type="image"
+          src="img/icons8-hand-scissors-skin-type-3-100.png"
+          value="Scissors"
+        />
+      </div>
     </div>
     <p class="playerChoice"></p>
     <p class="computerChoice"></p>
     <p class="playerScore"></p>
     <p class="computerScore"></p>
-    <h2 class="singleGame"></h2>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

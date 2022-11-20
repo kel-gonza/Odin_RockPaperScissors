@@ -3,31 +3,35 @@
 	box-sizing: border-box;
 }
 
-/* Clear fix hack */
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
-
-.clear {
-	clear: both;
-}
 
 /******************************************
 /* BASE STYLES
 /*******************************************/
 
-body {}
+body {
+	background: url('/img/pexels-dan-cristian-pădureț-5102221.jpeg') fixed center;
+}
 
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {}
+
+.options{
+	/* border: .4rem solid black; */
+	border-radius: .5rem;
+	margin: 1rem;
+	padding: 1rem .5rem;
+	transition: all .07s ease;
+	width: 10rem;
+}
+
+.options:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 1rem #000000;
+}
+
 
 footer {}
 

@@ -1,20 +1,19 @@
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
 
-function playerSelection(prompt){
-
+function playerSelection(player){
     //if player chooses 'rock' will return a string
-    if(prompt === 'rock') {
+    if ( player=== 'rock') {
         return 'Player has chosen: Rock!';
         // else if player chooses 'paper' it will return a string stating that
-    } else if(prompt === 'paper') {
+    } else if( player === 'paper') {
         return 'Player has chosen: Paper!'
         // else if player has chosen 'scissors' it will return a string
-    } else if(prompt === 'scissors') {
-        return 'Player has chosesn: Scissors!'
-        // else; if player has not chosen any of the above statments, it will return an error
-    } else{
-        return 'Error; please choose out of the three words.'
+    } else if( player === 'scissors') {
+        return 'Player has chosen: Scissors!'
+        // else; if player has not chosen any of the above statements, it will return an error
+    } else {
+        return 'Error'
     }
 }
 
@@ -82,16 +81,19 @@ function singleGame(p1, p2){
 }
 
 
-function playGame() {
-// deleted prompt. instead we will add the clickable buttons choices
-    console.log(playerSelection(player))
-    computer = computerSelection();
-    console.log(`Computer has chosen: ${computer}!`)
-    console.log(singleGame(player, computer));
-    console.log(`Your score = ${userScore}`)
-    console.log(`Computer's score = ${computerScore}`)
-}
-console.log(playGame())
+
+
+// function playGame() {
+// // deleted prompt. instead we will add the clickable buttons choices
+// 	const player = this.textContent
+//     console.log(playerSelection())
+//     computer = computerSelection();
+//     console.log(`Computer has chosen: ${computer}!`)
+//     console.log(singleGame(player, computer));
+//     console.log(`Your score = ${userScore}`)
+//     console.log(`Computer's score = ${computerScore}`)
+// }
+// console.log(playGame())
 
 // attach event listener 'click' to a group of buttons
 const buttons = document.querySelectorAll('button');
@@ -99,7 +101,16 @@ const buttons = document.querySelectorAll('button');
 // going to use the forEach method to iterate through each buttons
 
 buttons.forEach((button) => {
-	button.addEventListener('click', playGame) 
+	button.addEventListener('click', function playGame() {
+// deleted prompt. instead we will add the clickable buttons choices
+		const player = this.textContent;
+    	console.log(playerSelection(player))
+    	computer = computerSelection();
+    	console.log(`Computer has chosen: ${computer}!`)
+    	console.log(singleGame(player, computer));
+    	console.log(`Your score = ${userScore}`)
+    	console.log(`Computer's score = ${computerScore}`)
+	});
 });
 
 

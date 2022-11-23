@@ -23,35 +23,28 @@
     <h2 class="singleGame"></h2>
     <div class="invisibleContainer">
       <div id="container">
-        <input
-          class="options"
-          type="image"
-          src="img/icons8-hand-rock-skin-type-1-100.png"
-          value="Rock"
-        />
-        <input
-          class="options"
-          type="image"
-          src="img/icons8-hand-100.png"
-          value="Paper"
-        />
-        <input
-          class="options"
-          type="image"
-          src="img/icons8-hand-scissors-skin-type-3-100.png"
-          value="Scissors"
-        />
+        <button class="rockB fightButton">
+          <i class="fa fa-hand-rock-o fa-5x"></i>
+        </button>
+        <button class="paperB fightButton">
+          <i class="fa fa-hand-paper-o fa-5x"></i>
+        </button>
+        <button class="scissorsB fightButton">
+          <i class="fa fa-hand-scissors-o fa-5x"></i>
+        </button>
       </div>
     </div>
     <p class="playerChoice"></p>
     <p class="computerChoice"></p>
     <p class="playerScore"></p>
     <p class="computerScore"></p>
+    <!-- this button is not displayed until the game has finished.  -->
+    <button class="playAgain">Play again?</button>
     <footer>
       <span>Kels</span>
       <span
         ><a href="https://github.com/kel-gonza"
-          ><img src="img/github.png" alt="github profile" /></a
+          ><i class="fa fa-github fa-lg"></i></a
       ></span>
     </footer>
     <script type="text/javascript" src="main.js"></script>

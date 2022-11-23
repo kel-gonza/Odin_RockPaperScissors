@@ -9,9 +9,9 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
+/* body {
 
-}
+} */
 p{
 	font-size: 20px;
 }
@@ -41,6 +41,10 @@ footer {
 	position: absolute;
 	bottom:30px;
 	right:30px;
+}
+
+.playAgain {
+	display: none;
 }
 
 /******************************************

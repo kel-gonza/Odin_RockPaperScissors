@@ -1,5 +1,6 @@
 let userScore = 0;
 let computerScore = 0;	
+let round = 0;
 
 function computerSelection(){
     const choices = ['Scissors', 'Rock', 'Paper'];
@@ -88,9 +89,22 @@ function checkWinner() {
 	return false;
 }
 
-function playGame() {
+function resetGame(){
+	// will reset the page once the button for play again is clicked
+	const reset = document.querySelector('.playAgain');
+	reset.addEventListener('click', () => {
+		window.location.reload();
+	});
+}
 
-	// player is not defined. we have to find a way to define playerand find a way on how the computer will know when the use hasclicked on the icon it will show the value. 
+function countRounds() {
+	const rounds = document.querySelector('.rounds');
+	round += 1;
+	rounds.textContent = `Round: ${round}`;
+	return round;
+}
+
+function playGame() {
 	const fightButton = document.querySelectorAll('.fightButton');
 	// loop through the button
 	let player;
@@ -107,15 +121,18 @@ function playGame() {
 			}else{
 				player = 'Error';
 			}
-					// let player = playerSelection();
+
 			const sGame = document.querySelector('.singleGame');
 			const pChoice = document.querySelector('.playerChoice');
 			const cChoice = document.querySelector('.computerChoice');
+			
 			pChoice.textContent = `Player has chosen: ${player}`
     		computer = computerSelection();
 			cChoice.textContent = `Computer has chosen: ${computer}!`
 
 			sGame.textContent = singleGame(player, computer);
+
+			countRounds();
 
 			updateScore();
 		
@@ -124,11 +141,10 @@ function playGame() {
 				computerScore = 0;
 				updateScore();
 			}
+
+			resetGame();
 		});
 	});
 };
-
-// attach event listener 'click' to a group of buttons
-
 
 playGame();

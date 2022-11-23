@@ -9,6 +9,26 @@ function computerSelection(){
 
     let choice = choices[Math.floor(Math.random() * choices.length)];
 
+	const cScissors = document.querySelector('.computerScissors');
+	const cRock = document.querySelector('.computerRock');
+	const cPaper = document.querySelector('.computerPaper')
+	
+	if (choice === 'Scissors') {
+		cScissors.style.color = 'black';
+		cPaper.style.color = 'rgb(241,220, 170)';
+		cRock.style.color = 'rgb(241,220, 170)'
+
+	} else if (choice === 'Rock') {
+		cRock.style.color = 'black';
+		cScissors.style.color = 'rgb(241,220, 170)';
+		cPaper.style.color = 'rgb(241,220, 170)';
+
+	} else if (choice === 'Paper') {
+		cPaper.style.color = 'black';
+		cRock.style.color = 'rgb(241,220, 170)';
+		cScissors.style.color = 'rgb(241,220, 170)';
+	}
+
     return choice;
 }
 

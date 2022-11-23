@@ -1,7 +1,7 @@
 /* Box Model Hack */
 * {
 	box-sizing: border-box;
-	text-align: center;
+	font-family: "Titillium Web", sans-serif;
 }
 
 
@@ -9,12 +9,19 @@
 /* BASE STYLES
 /*******************************************/
 
-/* body {
+body {
+	background: rgb(9, 75, 113);
+}
 
-} */
+h1,h2,p, span{
+	color: rgb(241, 220, 170);
+}
+
 p{
 	font-size: 20px;
 }
+
+
 
 /******************************************
 /* LAYOUT
@@ -37,16 +44,43 @@ img{
 	height:auto;
 }
 
-footer {
-	position: absolute;
-	bottom:30px;
-	right:30px;
-}
 
 .playAgain {
 	display: none;
 }
 
 /******************************************
-/* ADDITIONAL STYLES
+/* for js
 /*******************************************/
+
+.disabled-button .choiceIcon {
+	cursor: default;
+	transform: none;
+	transition: none;
+}
+
+.opacity {
+	opacity:0.5;
+}
+.fightButton{
+	background-color: transparent;
+	border:none;
+}
+.fightButton:focus {
+	outline: none;
+}
+
+.choiceIcon{
+	color:rgb(241,220, 170);
+	transition: all .3s;
+} 
+
+.choiceIcon:hover{
+	cursor:pointer;
+	transform: scale(1.1);
+	transition:all .3s;
+}
+
+.colorIcon{
+	color:rgb(241, 220, 170);
+}

@@ -60,6 +60,13 @@ img{
 	justify-content: space-around;
 }
 
+.mainContent {
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+	max-width: 946px;
+}
+
 /******************************************
 /* for js
 /*******************************************/
@@ -94,4 +101,8 @@ img{
 
 .colorIcon{
 	color:rgb(241, 220, 170);
+}
+
+.baseColor {
+	color:rgb(241,220, 170);
 }

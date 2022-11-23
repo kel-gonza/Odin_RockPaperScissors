@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -16,21 +22,20 @@
     <header>
       <h1>Rock Paper Scissors Game</h1>
     </header>
-    <h2>Welcome!</h2>
-    <h2>First to 5 wins!!</h2>
-    <p>Good Luck.</p>
+    <h2>First to 5 wins!</h2>
+    <p class="rounds">Round: 0</p>
 
     <h2 class="singleGame"></h2>
     <div class="invisibleContainer">
       <div id="container">
         <button class="rockB fightButton">
-          <i class="fa fa-hand-rock-o fa-5x"></i>
+          <i class="fa fa-hand-rock-o fa-5x choiceIcon"></i>
         </button>
         <button class="paperB fightButton">
-          <i class="fa fa-hand-paper-o fa-5x"></i>
+          <i class="fa fa-hand-paper-o fa-5x choiceIcon"></i>
         </button>
         <button class="scissorsB fightButton">
-          <i class="fa fa-hand-scissors-o fa-5x"></i>
+          <i class="fa fa-hand-scissors-o fa-5x choiceIcon"></i>
         </button>
       </div>
     </div>
@@ -38,13 +43,14 @@
     <p class="computerChoice"></p>
     <p class="playerScore"></p>
     <p class="computerScore"></p>
+
     <!-- this button is not displayed until the game has finished.  -->
     <button class="playAgain">Play again?</button>
     <footer>
       <span>Kels</span>
       <span
         ><a href="https://github.com/kel-gonza"
-          ><i class="fa fa-github fa-lg"></i></a
+          ><i class="fa fa-github fa-lg colorIcon"></i></a
       ></span>
     </footer>
     <script type="text/javascript" src="main.js"></script>

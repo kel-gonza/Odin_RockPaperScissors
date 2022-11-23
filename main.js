@@ -1,6 +1,8 @@
 let userScore = 0;
 let computerScore = 0;	
 let round = 0;
+const reset = document.querySelector('.playAgain');
+const fightButton = document.querySelectorAll('.fightButton');
 
 function computerSelection(){
     const choices = ['Scissors', 'Rock', 'Paper'];
@@ -71,27 +73,26 @@ function updateScore(){
 	cScore.textContent =`Computer's score = ${computerScore}`;
 };
 
-function checkWinner() {
-	let pScore = userScore;
-	let cScore = computerScore;
+function checkWinner(pScore, cScore) {
+	if (pScore === 5 || cScore === 5) {
+		fightButton.forEach((button) => {
+			button.setAttribute('disabled', 'true');
+			button.classList.add('disabled-button','opacity')
+		});
 
-	if (pScore === 5 || cScore === 5){
 		if (pScore === 5){
-			let winner = 'You have Won. Congrats!';
+			let winner = 'You have Won Congrats!';
 			alert(winner);
-			return true;
-		}else{
+		} else{
 			let winner = 'Computer has won. Better luck next time.'
 			alert(winner);
-			return true;
 		}
+		reset.style.display = 'block';
 	}
-	return false;
 }
 
 function resetGame(){
 	// will reset the page once the button for play again is clicked
-	const reset = document.querySelector('.playAgain');
 	reset.addEventListener('click', () => {
 		window.location.reload();
 	});
@@ -105,7 +106,6 @@ function countRounds() {
 }
 
 function playGame() {
-	const fightButton = document.querySelectorAll('.fightButton');
 	// loop through the button
 	let player;
 	
@@ -136,11 +136,7 @@ function playGame() {
 
 			updateScore();
 		
-			if(checkWinner()) {
-				userScore = 0;
-				computerScore = 0;
-				updateScore();
-			}
+			checkWinner(userScore, computerScore);
 
 			resetGame();
 		});

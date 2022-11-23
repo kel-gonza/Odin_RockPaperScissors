@@ -3,6 +3,10 @@ let computerScore = 0;
 let round = 0;
 const reset = document.querySelector('.playAgain');
 const fightButton = document.querySelectorAll('.fightButton');
+const rounds = document.querySelector('.rounds');
+const winnerTxt = document.querySelector('.winnerText');
+const popUP = document.querySelector('.modal');
+const main = document.querySelector('.mainContent');
 
 function computerSelection(){
     const choices = ['Scissors', 'Rock', 'Paper'];
@@ -101,13 +105,16 @@ function checkWinner(pScore, cScore) {
 		});
 
 		if (pScore === 5){
-			let winner = 'You have Won Congrats!';
-			alert(winner);
+			winnerTxt.textContent = 'You have Won Congrats!';
+			popUP.style.display = 'block'
 		} else{
-			let winner = 'Computer has won. Better luck next time.'
-			alert(winner);
+			winnerTxt.textContent = 'Computer has won. Better luck next time.'
+			popUP.style.display = 'block'
 		}
+		main.classList.add('overlay');
 		reset.style.display = 'block';
+		rounds.style.display = 'block';
+
 	}
 }
 
@@ -119,7 +126,6 @@ function resetGame(){
 }
 
 function countRounds() {
-	const rounds = document.querySelector('.rounds');
 	round += 1;
 	rounds.textContent = `Round: ${round}`;
 	return round;

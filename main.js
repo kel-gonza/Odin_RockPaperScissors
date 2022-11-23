@@ -1,22 +1,5 @@
 let userScore = 0;
-let computerScore = 0;
-
-function playerSelection(player){
-    //if player chooses 'rock' will return a string
-    if ( player=== 'Rock') {
-        return 'Rock!';
-        // else if player chooses 'paper' it will return a string stating that
-    } else if( player === 'Paper') {
-        return 'Paper!'
-        // else if player has chosen 'scissors' it will return a string
-    } else if( player === 'Scissors') {
-        return 'Scissors!'
-        // else; if player has not chosen any of the above statements, it will return an error
-    } else {
-        return 'Error'
-    }
-}
-
+let computerScore = 0;	
 
 function computerSelection(){
     const choices = ['Scissors', 'Rock', 'Paper'];
@@ -27,16 +10,16 @@ function computerSelection(){
 }
 
 
-function singleGame(p1, p2){
+function singleGame(player, p2){
 
     // if they both have the same options it will be a tie
-    if(p1 === p2){
+    if(player === p2){
         return 'Tie Game!'
     }
 
     //player 1 is scissors
 
-    if (p1 === 'Scissors') {
+    if (player === 'Scissors') {
         // if player 2 is paper
         if (p2 === 'Paper') {
             //player 2 will lose
@@ -49,7 +32,7 @@ function singleGame(p1, p2){
             return 'Computer has won: Rock Beats Scissors';
         }
     // player 1 is Rock
-    } else if (p1 === 'Rock') {
+    } else if (player === 'Rock') {
         // if player 2 is scissors
         // player 2 loses
         if(p2 === 'Scissors') {
@@ -63,7 +46,7 @@ function singleGame(p1, p2){
         }
     }else {
             // Player 1 is Paper
-        if (p1 === 'Paper') {
+        if (player === 'Paper') {
         // if player 2 is rock
         // player 1 wins
             if (p2 === 'Rock') {
@@ -105,34 +88,47 @@ function checkWinner() {
 	return false;
 }
 
-// attach event listener 'click' to a group of buttons
-const options = document.querySelectorAll('.options');
+function playGame() {
 
-// going to use the forEach method to iterate through each buttons
+	// player is not defined. we have to find a way to define playerand find a way on how the computer will know when the use hasclicked on the icon it will show the value. 
+	const fightButton = document.querySelectorAll('.fightButton');
+	// loop through the button
+	let player;
+	
+	fightButton.forEach((fight) => {
+		// create an eventlistner and loop through the weapon class
+		fight.addEventListener('click', () => {
+			if (fight.classList.contains('rockB')){
+				player = "Rock";
+			} else if (fight.classList.contains('paperB')){
+				player = "Paper";
+			} else if (fight.classList.contains('scissorsB')) {
+				player = 'Scissors';
+			}else{
+				player = 'Error';
+			}
+					// let player = playerSelection();
+			const sGame = document.querySelector('.singleGame');
+			const pChoice = document.querySelector('.playerChoice');
+			const cChoice = document.querySelector('.computerChoice');
+			pChoice.textContent = `Player has chosen: ${player}`
+    		computer = computerSelection();
+			cChoice.textContent = `Computer has chosen: ${computer}!`
 
-options.forEach((option) => {
-	option.addEventListener('click', function playGame() {
+			sGame.textContent = singleGame(player, computer);
 
-		const sGame = document.querySelector('.singleGame');
-		const pChoice = document.querySelector('.playerChoice');
-		const cChoice = document.querySelector('.computerChoice');
-		const player = this.value;
-    	
-		pChoice.textContent = `Player has chosen: ${playerSelection(player)}`
-    	computer = computerSelection();
-		cChoice.textContent = `Computer has chosen: ${computer}!`
-
-		sGame.textContent = singleGame(player, computer);
-
-		updateScore();
-		
-		if(checkWinner()) {
-			userScore = 0;
-			computerScore = 0;
 			updateScore();
-		}
+		
+			if(checkWinner()) {
+				userScore = 0;
+				computerScore = 0;
+				updateScore();
+			}
+		});
 	});
-});
+};
+
+// attach event listener 'click' to a group of buttons
 
 
-
+playGame();

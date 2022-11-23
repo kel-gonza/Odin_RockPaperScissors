@@ -24,12 +24,14 @@
     </header>
     <h2>First to 5 wins!</h2>
     <main class="mainContent">
-      <p class="rounds">Round: 0</p>
+      <div class="cvp">
+        <p class="playerScore"></p>
+        <p class="computerScore"></p>
+      </div>
 
-      <h2 class="singleGame"></h2>
-      <p class="playerChoice"></p>
+      <h2 class="singleGame margin"></h2>
 
-      <div class="invisibleContainer">
+      <div class="cvp">
         <div class="container">
           <button class="rockB fightButton">
             <i class="fa fa-hand-rock-o fa-5x choiceIcon"></i>
@@ -41,24 +43,36 @@
             <i class="fa fa-hand-scissors-o fa-5x choiceIcon"></i>
           </button>
         </div>
-      </div>
 
-      <div class="computerImage">
-        <p class="computer-title">Computer:</p>
-        <p class="computerChoice"></p>
-        <div class="container">
-          <i class="fa fa-hand-rock-o fa-5x computerRock baseColor"></i>
-          <i class="fa fa-hand-paper-o fa-5x computerPaper baseColor"></i>
-          <i class="fa fa-hand-scissors-o fa-5x computerScissors baseColor"></i>
+        <div class="computerImage">
+          <!-- <p class="computer-title">Computer:</p> -->
+          <div class="container">
+            <button class="compButton">
+              <i class="fa fa-hand-rock-o fa-5x computerRock choiceIcon"></i>
+            </button>
+            <button class="compButton">
+              <i class="fa fa-hand-paper-o fa-5x computerPaper choiceIcon"></i>
+            </button>
+            <button class="compButton">
+              <i
+                class="fa fa-hand-scissors-o fa-5x computerScissors choiceIcon"
+              ></i>
+            </button>
+          </div>
         </div>
       </div>
 
-      <p class="playerScore"></p>
-      <p class="computerScore"></p>
+      <div class="container cvp">
+        <p class="playerChoice">Player has chosen: N/A</p>
+        <p class="computerChoice">Computer has chosen: N/A</p>
+      </div>
     </main>
 
-    <!-- this button is not displayed until the game has finished.  -->
-    <button class="playAgain">Play again?</button>
+    <div class="modal">
+      <p class="winnerText"></p>
+      <p class="rounds">Round: 0</p>
+      <button class="playAgain">Play again?</button>
+    </div>
     <footer>
       <span>Kels</span>
       <span

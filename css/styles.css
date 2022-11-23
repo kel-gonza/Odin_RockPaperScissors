@@ -27,6 +27,9 @@ p{
 /* LAYOUT
 /*******************************************/
 
+h1 {
+	text-align: center;
+}
 .options{
 	/* border: .4rem solid black; */
 	border-radius: .5rem;
@@ -47,6 +50,14 @@ img{
 
 .playAgain {
 	display: none;
+}
+
+.container {
+	border: 5px dotted rgb(241, 220, 170);
+	padding: 2rem;
+	margin: 3rem 10em;
+	display: flex;
+	justify-content: space-around;
 }
 
 /******************************************
